@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HTML5 и CSS3 сайт</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <header>
+    <div id="logo" onclick="slowScroll('#top')">
+      <span>Ion.it</span>
+    </div>
+    <div id="about">
+      <a href="#" title="Можливості" onclick="slowScroll('#main')">Можливості</a>
+      <a href="#" onclick="slowScroll('#overview')" title="Переваги">Уроки</a>
+      <a href="#" onclick="slowScroll('#contacts')" title="Контакти">Контакти</a>
+      <a href="#" onclick="slowScroll('#faq')" title="Відповіді на запитання">FAQ</a>
+    </div>
+  </header>
+
+  <div id="top" >
+    <h1>Програмування</h1>
+    <h3>як спосіб життя!</h3>
+  </div>
+  
+  <div id="main">
+    <div class="intro">
+      <h2>Почніть програмувати вже сьогодні!</h2>
+      
+    </div>
+    <div class="text">
+      <span>"Часу нам відпущено не так вже й багато, щоб його витрачати, намагаючись прожити чуже життя. Не довіряйте догмам: не можна жити, спираючись тільки на те, що придумали інші. У жодному випадку чужі думки не повинні приглушувати ваш власний внутрішній голос. І найголовніше – наберіться мужності, щоб слідувати за покликом власного серця і своєї інтуїції"
+        <p align="right">Steve Jobs</p>
+      </span>
+    </div>
+  </div>
+
+  <div id="overview">
+    <h2>Переваги</h2>
+    <h4>Доступність та простота</h4>
+
+    <div class="img">
+      <img src="python.jpg" alt="">
+      <span>Уроки по Python для початківців</span>
+    </div>
+    <div class="img">
+      <img src="ph.jpg" alt="">
+      <span>Уроки PhotoShop для початківців</span>
+    </div>
+  </div>
+
+  <div id="contacts">
+    <center><h5>Зворотній звязок</h5></center>
+    <form  id="form_input"  enctype="multipart/form-data">
+  <label for="name">Ім'я <span>*</span></label><br>
+
+    <!-- Hidden Required Fields -->
+
+    <input type="hidden" name="project_name" value="valid">
+    <input type="hidden" name="admin_email" value="hellybib@gmail.com">
+    <input type="hidden" name="form_subject" value="Form Subject">
+
+    <!-- END Hidden Required Fields -->
+
+    <input type="text" name="Name" placeholder="Введіть ім'я" required><br>
+    <label for="email" patern='[a-z]' data-validate-field="email">Ваша пошта <span>*</span></label><br>
+    <input type="email" name="E-mail"   placeholder="Введіть ваш email" required><br>
+    <label for="message">Ваше повідомлення <span>*</span></label><br>
+    <textarea type='text 'placeholder="Введіть повідомлення" required name="message" id="message" ></textarea><br>
+    <button align="center" id="mess_send" class="btn" type="submit" >Відправити</button>
+
+  </form>
+  </div>
+
+  <div id="faq">
+    <div>
+      <span class="title">Оплата</span><br>
+      <span class="heading">Як буде проходити оплата?</span>
+      <p>Ми приймаємо оплату в будь-якому вигляді, після того як ви відправите свої контактні дані, наш менеджер зв'яжеться з вами по Email. </p>
+      
+    </div>
+    <div>
+      <span class="title">Інформація</span><br>
+      <span class="heading">Що входить до послуг сервісу?</span>
+      <p>Після того як ви зв'яжетесь з нашим менеджером, і оплатите курси, вам буде надано архім з різними курсами на ваш запит ,від відомих викладачів таких навчальних майданчиків як Geek Brains,OTUS,Jet brains і т.д.</p>
+      
+    </div>
+    <div>
+      <span class="title">Гарантії</span><br>
+      <span class="heading">Які гарантії у нас є?</span>
+      <p>Ми компанія з достатнім ринковим досвідом, яка здійснила більше 100 успішних продажів, за потреби пред'явлення нами доказів щодо факту чесного продажу зверніться до нашого менеджера. Ми сподіваємося на вашу довіру.</p>
+      
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="script.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    function slowScroll(id) {
+      $('html, body').animate({
+        scrollTop: $(id).offset().top
+      }, 500);
+    }
+
+    $(document).on("scroll", function () {
+      if($(window).scrollTop() === 0)
+        $("header").removeClass("fixed");
+      else
+        $("header").attr("class", "fixed");
+    });
+  </script>
+</body>
+</html>
